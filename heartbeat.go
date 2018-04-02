@@ -10,7 +10,7 @@ import (
 
 const (
 	defaultHeartbeatInterval             = 10 * time.Second
-	defaultHeartbeatTolerance            = 15 * time.Second
+	defaultHeartbeatTolerance            = 60 * time.Second
 	defaultStreamType         StreamType = 0xFFFFFFFF
 )
 
