@@ -56,6 +56,8 @@ type session struct {
 	// debug information received from the remote end via GOAWAY frame
 	remoteError error
 	remoteDebug []byte
+
+	al 	sync.Mutex  // mutex to prevent recurring race condition
 }
 
 // Client returns a new muxado client-side connection using trans as the transport.
@@ -341,7 +343,9 @@ func (s *session) writer() {
 // reader() reads frames from the underlying transport and handles passes them to handleFrame
 func (s *session) reader() {
 	defer s.recoverPanic("reader()")
+	s.al.Lock()
 	defer close(s.accept)
+	s.al.Unlock()
 	for {
 		f, err := s.framer.ReadFrame()
 		if err != nil {
