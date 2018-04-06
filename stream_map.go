@@ -3,7 +3,7 @@ package muxado
 import (
 	"sync"
 
-	"github.com/inconshreveable/muxado/frame"
+	"github.com/iost-official/muxado/frame"
 )
 
 const (

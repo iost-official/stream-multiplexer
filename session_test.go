@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/inconshreveable/muxado/frame"
+	"github.com/iost-official/muxado/frame"
 )
 
 func newFakeStream(sess sessionPrivate, id frame.StreamId, windowSize uint32, fin bool, init bool) streamPrivate {

@@ -9,7 +9,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/inconshreveable/muxado/frame"
+	"github.com/iost-official/muxado/frame"
 )
 
 var (
